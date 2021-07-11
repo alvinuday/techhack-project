@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/payment.css">
+    <link href="https://kit-pro.fontawesome.com/releases/v5.15.3/css/pro.min.css" rel="stylesheet">
+    <title>TechHack</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <div>
+          <img src="/assets/THTlogo.png" alt="" class="logo">
+        </div>
+        <div class="nav__links">
+          <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">About Us</a></li>
+            <li><a href="">Blogs</a></li>
+            <li><a href="">Contact Us</a></li>
+            <li><a href="">Courses</a></li>
+          </ul>
+        </div>
+        <div class="my_courses_tab">
+          <div class="ham" id="ham">
+            <li class="navbar-dropdown">
+              <h1>My Profile</h1>
+              <div class="dropdown">
+                <a href="#"><%=user.fName%></a>
+                <a href="#">My Courses</a>
+                <a href="/logout">Sign Out</a>
+              </div>
+            </li>
+          </div>
+        </div>
+      </nav>
+      <div class="main__container">
+        <div class="checkout_container">
+          <div class="flexbox">
+            <div class="top_container">
+              <img src="/assets/shopping-cart.png" alt="" class="top__image">
+              <h1>Checkout</h1>
+            </div>
+            <div class="input_options">
+              <div class="input_options">
+                <input type="radio" id="card" name="selector" value="card">
+                <label for="card">Pay With Debit/Credit Card</label>
+                <div class="images__holder">
+                  <img src="/assets/card-method-payment-visa.svg" alt="" class="visa__image">
+                  <img src="/assets/card-master-method-payment.svg" alt="" class="visa__image">
+                  <img src="/assets/bank-card-payment-rupay.svg" alt="" class="visa__image">
+                </div>
+              </div>
+            </div>
+            <div class="input_options">
+              <input type="radio" id="upi" name="selector" value="upi">
+              <label for="upi">Pay With UPI/Wallets</label>
+            </div>
+            <div class="bottom_container">
+              <button type="submit" onclick="selectedButton()">SUBMIT</button>
+            </div>
+          </div>
+        </div>
+        <div class="summary__container">
+          <div class="flexbox">
+            <h1>Summary</h1>
+            <hr>
+            <h2><%=course.heading%></h2>
+            <h3>Orignal Price: <span></span></h3>
+            <h3>Discount: <span></span></h3>
+            <h3 class="total">Total:<span>Rs. <%=course.price %></span></h3>
+            <input type="hidden" id="courseId" value="<%=course.courseId%>">
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    function selectedButton() {
+      var radios = document.getElementsByName("selector");
+      var courseId = document.getElementById("courseId").value;
+      for(var i=0; i<radios.length; i++) {
+        if(radios[i].checked){
+          if(radios[i].value === 'card'){
+            window.location.assign("/checkout-card/"+ courseId);
+          } else if(radios[i].value === 'upi') {
+            window.location.assign("/checkout-razorpay");
+          }
+        }
+      }
+    }
+  </script>
+</html>

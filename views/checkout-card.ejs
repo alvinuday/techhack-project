@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>TechHack Technologies</title>
+    <!-- <meta name="description" content="A demo of a card payment on Stripe" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="/css/checkout-card.css" />
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch"></script>
+    <script src="/js/client.js" defer></script>
+  </head>
+
+  <body>
+    <!-- Display a payment form -->
+    <form id="payment-form">
+      <input type="text" id="email" placeholder="<%=user.username%>" value="<%=user.username%>" disabled/>
+      <div id="card-element"><!--Stripe.js injects the Card Element--></div>
+      <button id="submit">
+        <div class="spinner hidden" id="spinner"></div>
+        <span id="button-text">Pay now</span>
+      </button>
+      <p id="card-error" role="alert"></p>
+      <p class="result-message hidden">
+        Payment succeeded
+        <a href="" target="_blank">Click here to verify your payment</a>
+        <input type = "hidden" value="<%=course.courseId%>" name="courseId">
+        <input type = "hidden" value="<%=course.price%>" name="price">
+      </p>
+    </form>
+  </body>
+</html>

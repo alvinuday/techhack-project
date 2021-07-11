@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="css/styles.css" />
+	<title>TechHack Technologies</title>
+</head>
+
+<body>
+	<div class="container">
+		<nav>
+			<img src="/assets/THTlogo.png" alt="" />
+			<h1><span>Tech</span>Hack</h1>
+		</nav>
+		<div class="container__main">
+			<div class="login__form">
+				<form class="login__container" action="/login" method="post">
+					<img src="/assets/user.png" alt="" />
+					<!-- <input type="email" placeholder="">  
+                <input type="text"> -->
+					<%if(message){ %>
+					<div class="form__group field">
+						<p style="color: blanchedalmond; text-align: center"><%=message[message.length-1] %></p>
+					</div>
+					<%}%>
+						<div class="form__group field">
+							<input type="email" class="form__field" placeholder="Email" name="username" id="email" />
+							<label for="email" class="form__label">Email</label>
+						</div>
+						<div class="form__group field">
+							<input
+								type="password"
+								class="form__field"
+								placeholder="Password"
+								name="password"
+								id="password"
+							/>
+							<label for="password" class="form__label">Password</label>
+						</div>
+						<h2>
+							Don't have an account?
+							<a href="/register" style="color: #fff; text-decoration: none"><span>Sign Up</span></a>
+						</h2>
+						<button type="submit" class="inp-btn">Login</button>
+						<a href="/auth/google" class="inp-btn">Login With Google</a>
+						<!-- <button
+							type="submit"
+							style="
+								margin: 10px 0px;
+								padding: 0;
+								border: 0;
+								color: aliceblue;
+								background-color: transparent;
+								cursor: pointer;
+							"
+							formaction="/resend-link"
+						>
+							Resend Verification Link
+						</button> -->
+
+						<h2 class="forgot_password">
+							or
+							<span
+								><a href="/forgot-password" style="text-decoration: none; color: #fff"
+									>Forgot Password</a
+								></span
+							>
+						</h2>
+					</form>
+				</div>
+				<div class="login_isometric_img">
+					<img src="/assets/Coding _Isometric.png" alt="" />
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,700;1,400&family=Roboto:wght@500&display=swap');
+
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+
+body {
+    /* overflow: hidden; */
+    /* background-image: linear-gradient(to right, #05194B , #0F054B); */
+    height: 100vh;
+    width: 100vw;
+    background-image: linear-gradient(to bottom, #05194bd7, #20054be1),
+        url("../assets/cool-background.png");
+    background-size: cover;
+}
+
+.container{
+
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Lato', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main__container{
+    background-image: linear-gradient(to bottom, #3b37ff, #9429ff);
+    text-align: center;
+    color: white;
+    border-radius: 10px 40px 10px 40px;
+    padding: 50px;
+
+}
+
+h1{ 
+    margin: 1em;
+    font-style: bold;
+    color: white;
+    font-weight: 700;
+    font-size: 2rem;
+    
+}
+
+.main__container img{
+    width: 6em;
+}
+
+
+h2{
+    margin: 1em;
+    font-family: 'Roboto', sans-serif;  
+    font-weight: 400;
+}
+
+p {
+    margin: 2em;
+    font-style: italic;
+    font-size: 0.8rem;
+}

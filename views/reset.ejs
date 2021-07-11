@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="/css/rst_password.css" />
+	<link rel="stylesheet" href="/css/jquery.passwordRequirements.css" />
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script src="/js/jquery.passwordRequirements.min.js"></script>
+	<script>
+		/* trigger when page is ready */
+		$(document).ready(function () {
+			$('.pr-password').passwordRequirements({});
+		});
+	</script>
+	<title>TechHack Technologies</title>
+</head>
+
+<body>
+	<div class="container">
+		<div class="main__container">
+			<h1>Reset Password</h1>
+			<% const link="/reset-password/" + email + "/" + token %>
+			<form method="post" action="<%=link%>">
+				<%if(message){ %> <p style="color:blanchedalmond;"><%=message%></p> <%}%>
+					<div class="form__group field">
+						<input
+							type="password"
+							class="form__field pr-password"
+							placeholder="Password"
+							name="password"
+							id="txtNewPassword"
+							required
+							autocomplete="off"
+						/>
+						<label for="password" class="form__label">New Password</label>
+					</div>
+					<div class="form__group field">
+						<input
+							type="password"
+							class="form__field"
+							placeholder="cnf_Password"
+							name="cnf_password"
+							id="txtConfirmPassword"
+							required
+							autocomplete="off"
+						/>
+						<label for="cnf_password" class="form__label">Confirm Password</label>
+					</div>
+					<div class="registrationFormAlert" id="divCheckPasswordMatch">
+					</div>
+					<div>
+						<button type="submit" class="inp-btn" id="confirm-btn">Change Password</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="/js/confirm.js"></script>
+</html>

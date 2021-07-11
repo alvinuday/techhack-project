@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="css/signup.css" />
+	<link rel="stylesheet" href="/css/jquery.passwordRequirements.css" />
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script src="/js/jquery.passwordRequirements.min.js"></script>
+	<script>
+		/* trigger when page is ready */
+		$(document).ready(function () {
+			$('.pr-password').passwordRequirements({});
+		});
+	</script>
+	<link rel="shortcut icon" href="../assets/THTlogo.png" type="image/x-icon" />
+	<title>TechHack Technologies</title>
+</head>
+
+<body>
+	<div class="container">
+		<nav>
+			<img src="../assets/THTlogo.png" alt="" />
+			<h1><span>Tech</span>Hack</h1>
+		</nav>
+		<div class="main__container">
+			<div class="signup__form">
+				<form class="signup__container" action="/register" method="post">
+					<h2>SignUp</h2>
+					<%if(message){ %> <p style="color:blanchedalmond;"><%=message%></p> <%}%>
+						<div class="first_last_form">
+							<div class="form__group field first_name">
+								<input
+									type="text"
+									class="form__field"
+									placeholder="first_name"
+									name="fName"
+									id="firstName"
+									required
+									autocomplete="off"
+								/>
+								<label for="firstName" class="form__label">First Name</label>
+							</div>
+							<div class="form__group field first_name">
+								<input
+									type="text"
+									class="form__field"
+									placeholder="last_name"
+									name="lName"
+									id="lastName"
+									required
+									autocomplete="off"
+								/>
+								<label for="lastName" class="form__label">Last Name</label>
+							</div>
+						</div>
+						<div class="form__group field">
+							<input
+								type="email"
+								class="form__field"
+								placeholder="email"
+								name="username"
+								id="email"
+								required
+								autocomplete="off"
+							/>
+							<label for="email" class="form__label">Email</label>
+						</div>
+						<div class="form__group field">
+							<input
+								type="phone_number"
+								class="form__field"
+								placeholder="number"
+								name="number"
+								id="number"
+								required
+								autocomplete="off"
+							/>
+							<label for="number" class="form__label">Phone Number</label>
+						</div>
+						<div class="form__group field">
+							<input
+								type="password"
+								class="form__field pr-password"
+								placeholder="password"
+								name="password"
+								id="txtNewPassword"
+								required
+								autocomplete="off"
+							/>
+							<label for="password" class="form__label">Password</label>
+						</div>
+						<div class="form__group field">
+							<input
+								type="password"
+								class="form__field"
+								placeholder="cnf_password"
+								name="cnf_password"
+								id="txtConfirmPassword"
+								required
+								autocomplete="off"
+							/>
+							<label for="cnf_password" class="form__label">Confirm Password</label>
+						</div>
+						<div class="registrationFormAlert" id="divCheckPasswordMatch" style="padding-top:10px; color: blanchedalmond">
+						</div>
+						<button type="submit" class="inp-btn" id="confirm-btn">Sign Up</button>
+						<h3>
+							Already have an account? <a href="/login" style="text-decoration: none; color: #fff;"><span>Log In</span></a>
+						</h3>
+					</form>
+				</div>
+				<div class="signup_img">
+					<img src="../assets/wfh_1.svg" alt="" />
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="/js/confirm.js"></script>
+</html>
